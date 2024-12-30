@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories - Global Forums</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2c2c3e;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #00aaff;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        #categories-banner {
+            background-color: #2c2c3e;
+            color: #ffffff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        #categories-content {
+            display: flex;
+            justify-content: space-around;
+            padding: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .category-card {
+            background-color: #3e3e58;
+            color: #ffffff;
+            width: 200px;
+            padding: 1.5rem;
+            margin: 1rem;
+            text-align: center;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .category-card:hover {
+            background-color: #00aaff;
+            cursor: pointer;
+        }
+
+        .category-card h4 {
+            color: #00aaff;
+        }
+
+        footer {
+            background-color: #2c2c3e;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Global Forums</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="discussions.html">Discussions</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="categories-banner">
+            <h2>Explore Categories!</h2>
+            <p>Get your hands dirty in the world of coding, with a side of laughs and maybe some cringe-worthy memes. We've got something for everyone!</p>
+        </section>
+
+        <section id="categories-content">
+            <div class="category-card">
+                <h4>Web Development</h4>
+                <p>For all things HTML, CSS, and JavaScript. Let's make the web great again (or at least make it less buggy).</p>
+            </div>
+
+            <div class="category-card">
+                <h4>Python Programming</h4>
+                <p>Because Python is the only language that can actually make you feel like a wizard. ⚡</p>
+            </div>
+
+            <div class="category-card">
+                <h4>AI & Machine Learning</h4>
+                <p>Ever wanted to create your own Skynet? Well, here’s your chance! Just don’t turn evil, okay?</p>
+            </div>
+
+            <div class="category-card">
+                <h4>Game Development</h4>
+                <p>Develop games that crash your computer. JK, we’re teaching you to make something fun!</p>
+            </div>
+
+            <div class="category-card">
+                <h4>Mobile Apps</h4>
+                <p>Let's make apps that people actually use (and not just swipe through). Who knows? You might get rich.</p>
+            </div>
+
+            <div class="category-card">
+                <h4>Code Debugging</h4>
+                <p>For when your code is more of a hot mess than a well-organized spreadsheet. Come here for help!</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Global Forums. All rights reserved.</p>
+        <p>By using this site, you agree to our <a href="#">Privacy Policy</a>, <a href="#">Terms of Service</a>, and <a href="#">Cookie Policy</a>.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Global Forums</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #1e1e2f;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #2c2c3e;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #00aaff;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .login-container {
+            padding: 4rem;
+            text-align: center;
+            background-color: #2c2c3e;
+        }
+
+        h2 {
+            color: #00aaff;
+        }
+
+        .login-form {
+            background-color: #3e3e58;
+            padding: 2rem;
+            border-radius: 10px;
+            display: inline-block;
+            width: 300px;
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 1rem 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .form-input[type="text"], .form-input[type="email"], .form-input[type="password"] {
+            background-color: #2f3241;
+            color: white;
+        }
+
+        .form-input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        .form-input:focus {
+            outline: 2px solid #00aaff;
+        }
+
+        .form-submit {
+            background-color: #00aaff;
+            color: white;
+            padding: 1rem;
+            border: none;
+            width: 100%;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .form-submit:hover {
+            background-color: #0077cc;
+        }
+
+        .error-message {
+            color: #ff5555;
+            font-size: 1rem;
+            margin-top: 10px;
+        }
+
+        .complex-steps {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin-top: 2rem;
+            line-height: 1.8;
+        }
+
+        .complex-steps p {
+            font-weight: bold;
+        }
+
+        .complex-steps ul {
+            margin-top: 10px;
+        }
+
+        .complex-steps li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #2c2c3e;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        footer a {
+            color: #00aaff;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .hidden-step {
+            display: none;
+        }
+
+        .step-button {
+            background-color: #00aaff;
+            color: white;
+            padding: 0.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .step-button:hover {
+            background-color: #0077cc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>Global Forums</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="discussions.html">Discussions</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <h2>Login - A Required Process for Access</h2>
+
+            <div class="login-form">
+                <h3>Step 1: Provide Your Username</h3>
+                <form action="#" method="post">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" class="form-input" placeholder="Enter your username" required>
+
+                    <label for="email">Email Address (Ensure it's valid):</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="email@example.com" required>
+
+                    <label for="password">Create a Strong Password:</label>
+                    <ul>
+                        <li>Password must include at least 8 characters and 3 special symbols.</li>
+                        <li>It should contain both uppercase and lowercase letters.</li>
+                        <li>Must include at least one number.</li>
+                    </ul>
+                    <input type="password" id="password" name="password" class="form-input" placeholder="Your password" required>
+
+                    <label for="captcha">Confirm you're human:</label>
+                    <input type="checkbox" id="captcha" name="captcha" class="form-input"> I am not a robot
+
+                    <button type="button" class="step-button" id="step2">Proceed to Next Step</button>
+                </form>
+            </div>
+
+            <div class="hidden-step" id="step2-content">
+                <h3>Step 2: Email Verification</h3>
+                <p>A verification code has been sent to your email. Please check your inbox (and spam folder if necessary) for the code.</p>
+                <input type="text" id="verification-code" class="form-input" placeholder="Enter the verification code" required>
+                <button type="button" class="step-button" id="verify-email">Verify Email</button>
+            </div>
+
+            <div class="hidden-step" id="step3-content">
+                <h3>Step 3: Security Question</h3>
+                <p>Please answer the following question:</p>
+                <p><strong>What is your favorite programming language?</strong></p>
+                <input type="text" id="security-answer" class="form-input" placeholder="Your answer" required>
+                <button type="button" class="step-button" id="answer-submit">Submit Answer</button>
+            </div>
+
+            <div class="hidden-step" id="final-step-content">
+                <h3>Step 4: Final Review</h3>
+                <p>Your request is being reviewed. Please allow 24 to 48 hours for confirmation. You will be notified once the review is complete.</p>
+                <button type="button" class="step-button" id="finish">Finish</button>
+            </div>
+
+            <div class="error-message" id="error-message" style="display:none;">
+                <p><strong>Error:</strong> The provided information does not match our records. Please ensure all details are correct and try again later.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Global Forums. All rights reserved.</p>
+        <p>By using this site, you agree to our <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a>.</p>
+    </footer>
+
+    <script>
+        document.getElementById('step2').addEventListener('click', function() {
+            document.getElementById('step2-content').style.display = 'block';
+        });
+
+        document.getElementById('verify-email').addEventListener('click', function() {
+            const code = document.getElementById('verification-code').value.trim();
+            if (code === '1234') {
+                document.getElementById('step3-content').style.display = 'block';
+                document.getElementById('step2-content').style.display = 'none';
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        });
+
+        document.getElementById('answer-submit').addEventListener('click', function() {
+            const answer = document.getElementById('security-answer').value.trim();
+            if (answer.toLowerCase() === 'javascript') {
+                document.getElementById('final-step-content').style.display = 'block';
+                document.getElementById('step3-content').style.display = 'none';
+            } else {
+                document.getElementById('error-message').style.display = 'block';
+            }
+        });
+
+        document.getElementById('finish').addEventListener('click', function() {
+            alert('Your account is under review. You will be notified within 24-48 hours. Please allow time for processing.');
+        });
+    </script>
+</body>
+</html>
