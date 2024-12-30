@@ -1,225 +1,340 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Global Forums</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #1e1e2f;
-            color: #ffffff;
-            margin: 0;
-            padding: 0;
-        }
-
-        header {
-            background-color: #2c2c3e;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            color: #00aaff;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        nav ul li {
-            margin-left: 1.5rem;
-        }
-
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-        }
-
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-
-        #welcome-banner {
-            background-color: #2c2c3e;
-            color: #ffffff;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        #latest-posts {
-            padding: 2rem;
-        }
-
-        .post {
-            background-color: #33334d;
-            padding: 1rem;
-            margin-bottom: 1rem;
-            border-radius: 8px;
-        }
-
-        .post h4 a {
-            color: #00aaff;
-            text-decoration: none;
-        }
-
-        .post h4 a:hover {
-            text-decoration: underline;
-        }
-
-        .like-btn {
-            background-color: #00aaff;
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .like-btn:hover {
-            background-color: #0088cc;
-        }
-
-        .like-btn .count {
-            margin-left: 0.5rem;
-            background-color: #ffffff;
-            color: #1e1e2f;
-            padding: 0.25rem 0.5rem;
-            border-radius: 12px;
-        }
-
-        .tooltip {
-            display: none;
-            margin-left: 1rem;
-            background-color: #444;
-            padding: 0.5rem;
-            border-radius: 5px;
-        }
-
-        .like-btn.clicked .tooltip {
-            display: inline-block;
-        }
-
-        footer {
-            background-color: #2c2c3e;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-
-        footer a {
-            color: #00aaff;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<title>Sixpence | Portal</title>
+<meta http-equiv="content-language" content="en-us" />
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta name="author" content="Author Name Goes Here" />
+<meta name="design" content="Sadhana Ganapathiraju" />
+<meta name="copyright" content="Copyright Goes Here" />
+<meta name="description" content="Description Goes Here" />
+<meta name="keywords" content="And, Finally, Keywords Go Here." />
+<link rel="start" title="Home" href="http://www.sixpence.com/" />
+<link rel="stylesheet" type="text/css" media="screen" href="screen.css" />
 </head>
-<body>
-    <header>
-        <div class="logo">
-            <h1>Global Forums</h1>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="categories.html">Categories</a></li>
-                <li><a href="discussions.html">Discussions</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="login.html">Login</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section id="welcome-banner">
-            <h2>Welcome to Global Forums!</h2>
-            <p>Explore coding topics and projects. </p>
-        </section>
-
-        <section id="latest-posts">
-            <h3>Latest Posts</h3>
-            <article class="post">
-                <h4><a href="post.html">Understanding JavaScript Closures</a></h4>
-                <p>Learn about one of JavaScript's most powerful features...</p>
-                <span>Category: <a href="categories.html#javascript">JavaScript</a></span>
-                <br><br>
-                <a href="#" class="like-btn" onclick="toggleTooltip(this)">
-                    👍 Like <span class="count">124</span>
-                    <span class="tooltip">Login required to interact.</span>
-                </a>
-            </article>
-            <article class="post">
-                <h4><a href="post.html">Top 5 Python Libraries for Data Science</a></h4>
-                <p>Discover the libraries that every data scientist should know...</p>
-                <span>Category: <a href="categories.html#python">Python</a></span>
-                <br><br>
-                <a href="#" class="like-btn" onclick="toggleTooltip(this)">
-                    👍 Like <span class="count">98</span>
-                    <span class="tooltip">Login required to interact.</span>
-                </a>
-            </article>
-            <article class="post">
-                <h4><a href="post.html">CSS Grid: Building Responsive Layouts</a></h4>
-                <p>Master the art of layout design using CSS Grid...</p>
-                <span>Category: <a href="categories.html#css">CSS</a></span>
-                <br><br>
-                <a href="#" class="like-btn" onclick="toggleTooltip(this)">
-                    👍 Like <span class="count">55</span>
-                    <span class="tooltip">Login required to interact.</span>
-                </a>
-            </article>
-            <!-- Additional Posts -->
-            <article class="post">
-                <h4><a href="post.html">Building Your First React App</a></h4>
-                <p>Start your journey with React by creating a simple app...</p>
-                <span>Category: <a href="categories.html#react">React</a></span>
-                <br><br>
-                <a href="#" class="like-btn" onclick="toggleTooltip(this)">
-                    👍 Like <span class="count">87</span>
-                    <span class="tooltip">Login required to interact.</span>
-                </a>
-            </article>
-            <article class="post">
-                <h4><a href="post.html">What is Node.js? A Beginner's Guide</a></h4>
-                <p>Understand the basics of Node.js and why it's so popular...</p>
-                <span>Category: <a href="categories.html#nodejs">Node.js</a></span>
-                <br><br>
-                <a href="#" class="like-btn" onclick="toggleTooltip(this)">
-                    👍 Like <span class="count">56</span>
-                    <span class="tooltip">Login required to interact.</span>
-                </a>
-            </article>
-            <article class="post">
-                <h4><a href="post.html">Mastering Asynchronous JavaScript</a></h4>
-                <p>Explore async functions, promises, and async/await...</p>
-                <span>Category: <a href="categories.html#javascript">JavaScript</a></span>
-                <br><br>
-                <a href="#" class="like-btn" onclick="toggleTooltip(this)">
-                    👍 Like <span class="count">76</span>
-                    <span class="tooltip">Login required to interact.</span>
-                </a>
-            </article>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Global Forums. All rights reserved.</p>
-    </footer>
-
-    <script>
-        function toggleTooltip(button) {
-            button.classList.toggle('clicked');
-        }
-    </script>
-</body>
+<body id="babout">
+<div id="header">
+  <h1>Sixpence | Portal</h1>
+</div>
+<div id="navigation">
+  <ul>
+    <li id="lhome"><a href="index.html">Home</a></li>
+    <li id="lproducts"><a href="products.html">Products</a></li>
+    <li id="lsolutions"><a href="solutions.html">Solutions</a></li>
+    <li id="lproblems"><a href="problems.html">Problems</a></li>
+    <li id="labout"><a href="about.html">About Us</a></li>
+    <li id="lcontact"><a href="contact.html">Contact Us</a></li>
+  </ul>
+</div>
+<div id="wrapper">
+  <div id="content-wrapper">
+    <div id="content">
+      <h4>A Definition List</h4>
+      <dl>
+        <dt>Sixpence</dt>
+        <dd> An awesome new template. <em> Created by <a href="http://www.nikhedonia.com/" title="SimplyGold">Sadhana Ganapathiraju</a>. 
+          Feel free to use it, modify it, and take it apart to learn from it. A mention and a link isn't 
+          required but much appreciated. I'll stop abusing the definition list now. ;-) </em> </dd>
+        <dt>Intrepid</dt>
+        <dd>Courageous. <em>Harry's thinks he's intrepid, but actually, he's only stupid.</em></dd>
+        <dt>Inconsequential</dt>
+        <dd>Unimportant. <em>The fact that you don't know the meaning of inconsequential is <del>in</del>consequential. </em></dd>
+        <dt>Benevolent</dt>
+        <dd>Good/nice/generous. <em>Will the benevolent god please raise their hand?</em></dd>
+        <dt>Fabricated</dt>
+        <dd class="last">Made-up. <em>Lies are but fabricated truths.</em></dd>
+      </dl>
+      <h6>Other Stuff</h6>
+      <blockquote>
+        <p>I can't help it if people want to go to hell. <cite>&mdash; <abbr title="Invisible Pink Unicorn">IPU</abbr></cite></p>
+      </blockquote>
+      <pre><code>This is unlike any code I've ever seen in my entire life. Well, minus my dreams, maybe.</code></pre>
+    </div>
+  </div>
+  <div id="sidebar-wrapper">
+    <div id="sidebar">
+      <h3>An Unordered List</h3>
+      <ul>
+        <li>I am the most interesting person in the whole galaxy.</li>
+        <li>Monkeys are cute &mdash; in cartoons.</li>
+        <li>Tom &amp; Jerry rocks. Especially the kids' version.</li>
+        <li>July 16, 2009.</li>
+        <li>Great American Masterpiece.</li>
+        <li>Modern Art: Art or Garbage? Discuss.</li>
+      </ul>
+      <h3>An Ordered List</h3>
+      <ol>
+        <li>How to become <strong>one</strong> is studied by many.</li>
+        <li>Yin/yang. Left/right. Up/down. Black/white. <strong>Two</strong> thousand six hundred and forty-<strong>two</strong>.</li>
+        <li><strong>Three</strong> Little Pigs. <strong>Three</strong> Blind Mice. <strong>Three</strong> Wolves and a Swan Prince.</li>
+        <li>A Quarter + A Dime + A Nickel = <strong>4</strong> Dimes.</li>
+        <li>Now I know my 1, 2, 3; I can go to 4, <strong>5</strong>, 6.</li>
+        <li><strong>Six</strong>ty-<strong>six</strong> on <strong>6</strong>/<strong>6</strong>/<strong>6</strong>00<strong>6</strong></li>
+      </ol>
+      <h3>Stats</h3>
+      <p> This page was brought to you by the numbers 8 and 10, which were getting lonely. </p>
+    </div>
+  </div>
+</div>
+<div id="footer">
+  <p>Copyright &copy; 1850 &ndash; 2006 Sixpence. All rights reserved. </p>
+  <p> Design by <a href="http://www.nikhedonia.com/" title="SimplyGold">Sadhana Ganapathiraju</a>. 
+    Try more <a href="http://www.nikhedonia.com/showcase/category/free_templates/">free templates</a> or <a href="http://www.nikhedonia.com/showcase/category/commercial_templates/">commercial templates</a>. </p>
+  <p> <a href="http://all-free-download.com/free-website-templates/">Terms of Service</a> | <a href="http://all-free-download.com/free-website-templates/">Privacy</a> | <a href="http://all-free-download.com/free-website-templates/">Contact</a> | <a href="http://all-free-download.com/free-website-templates/">About</a> | <a href="http://validator.w3.org/check/referer" title="Valid XHTML 1.0 Strict">Xhtml</a> | <a href="http://jigsaw.w3.org/css-validator/check/referer?warning=no&amp;profile=css2" title="Valid CSS 2.0 Strict">Css</a> </p>
+</div>
+<div align=center>This template  downloaded form <a href='http://all-free-download.com/free-website-templates/'>free website templates</a></div></body>
 </html>
+<style>
+html
+{
+	margin: 0;
+	padding: 0;
+	color: #aaaaaa;
+	background-color: #333333;
+	font: normal 12px "Trebuchet MS", "Lucida Grande", Verdana, Georgia, Sans-Serif;
+}
+
+/* Links */
+
+a:link { text-decoration: none; color: #7799bb; }
+
+a:visited { text-decoration: none; color: #557799; }
+
+a:hover, a:active { color: #dd5555; }
+
+/* Html Elements */
+
+h1, h2, h3, h4, h5, h6 { font-weight: normal; margin: 0; padding: 10px 0; color: #779955; }
+
+h1 { font-size: 32px; }
+
+h2 { font-size: 28px; }
+
+h3 { font-size: 24px; }
+
+h4 { font-size: 20px; }
+
+h5, h6 { font-size: 17px; }
+
+ul, ol, dl, blockquote, pre
+{
+	color: #999999;
+	margin: 10px 35px; 
+	padding: 10px 30px; 
+	line-height: 1.6em;
+	border: 1px solid #1a1a1a;
+	border-top: 10px solid #151515;
+	background: #404040 url(images/navigation_hover.gif) top left repeat;
+}
+
+p { margin: 0; }
+
+ul { list-style-type: square; } 
+
+dt
+{
+	margin: 0;
+	color: #7799bb;
+	font-size: 10px; 
+	font-weight: bold;
+	padding: 10px 0 2px; 
+	text-transform: uppercase; 
+}
+
+dd { margin: 0; padding: 2px 0 5px; margin-bottom: 5px; border-bottom: 1px dotted #555555; }
+
+dd.last { border-bottom-width: 0; }
+
+pre { font-family: Consolas, Verdana, "Courier New"; font-size: 11px; padding: 10px 30px; }
+
+code { color: #779955; }
+
+abbr, acronym { text-decoration: none; border-bottom: 1px dotted #aaaaaa; cursor: help; }
+
+em { font-style: italic; }
+
+strong { font-weight: bold; }
+
+ins { color: #999999; text-decoration: none; padding-left: 20px; background: transparent url(images/information.png) center left no-repeat; }
+
+del { text-decoration: line-through; } 
+
+blockquote { text-align: right; }
+
+blockquote p { text-align: left; }
+
+blockquote cite { font-style: normal; padding-right: 10px; }
+
+/* Structure */
+
+body
+{
+	margin: 0;
+	float: left;
+	width: 100%; 
+}
+
+#header
+{
+	float: left; 
+	width: 100%; 
+	clear: both;
+	border-top: 10px solid #111111;
+	background: #222222 url(images/navigation_hover.gif) top left repeat;
+}
+
+#navigation
+{
+	float: left;
+	width: 100%; 
+	clear: both;
+	color: #333333;
+	border-bottom: 5px solid #222222;
+	background: #eeeeee url(images/navigation_bg.gif) top left repeat; 
+}
+
+#wrapper
+{
+	clear: both;
+	float: left;
+	width: 100%;
+	margin: 10px 0; 
+	background: transparent url(images/hr_dotted.gif) 60% 0 repeat-y; 
+}
+
+#content-wrapper
+{
+	width: 60%;
+	float: left;
+}
+
+#content
+{
+	float: left;
+	padding: 0 20px;
+}
+
+#sidebar-wrapper
+{
+	width: 40%;
+	float: left;
+}
+
+#sidebar
+{
+	float: left;
+	padding: 0 20px;
+}
+
+#footer
+{
+	clear: both;
+	float: left;
+	width: 100%; 
+	color: #888888;
+	text-align: center; 
+	background-color: #222222;
+	border-top: 1px solid #000000;
+	border-bottom: 10px solid #191919;
+}
+
+/* Header */
+
+#header h1 { padding: 20px; }
+
+/* Navigation */
+
+#navigation ul { float: left; list-style-type: none; margin: 0; padding: 0; background: none; border-width: 0; }
+
+#navigation li { float: left; }
+
+#navigation a
+{
+	float: left;
+	display: block;
+	padding: 5px 10px; 
+}
+
+#navigation a:link,
+#navigation a:visited
+{
+	color: #002244; 
+	font-weight: bold; 
+	text-transform: uppercase; 
+}
+
+#navigation a:hover,
+#navigation a:active
+{
+	color: #7799bb;
+	background: #333333 url(images/navigation_hover.gif) top left repeat;
+}
+
+li#lhome a:hover,
+li#lhome a:active
+{
+	background-position: 0 -3px; 
+}
+
+li#lproducts a:hover,
+li#lproducts a:active
+{
+	background-position: 0 1px; 
+}
+
+li#lsolutions a:hover,
+li#lsolutions a:active
+{
+	background-position: 0 2px; 
+}
+
+li#lmysterious a:hover,
+li#lmysterious a:active
+{
+	background-position: 0 -1px; 
+}
+
+li#labout a:hover,
+li#labout a:active
+{
+	background-position: 0 -2px; 
+}
+
+li#lcontact a:hover,
+li#lcontact a:active
+{
+	background-position: 0 -3px; 
+}
+
+body#babout li#labout a
+{
+	color: #99bbdd;
+	background: #333333 url(images/navigation_hover.gif) 0 -2px repeat;
+}
+
+/* Sidebar */
+
+#sidebar p
+{
+	color: #999999;
+	margin: 10px 35px; 
+	padding: 5px 30px; 
+	line-height: 1.6em;
+	border: 1px solid #1a1a1a;
+	border-top: 10px solid #151515;
+	background: #404040 url(images/navigation_hover.gif) top left repeat;
+}
+
+/* Footer */
+
+#footer p { margin: 15px 0; }
+
+#footer a:link { color: #888888; font-weight: bold; border-bottom: 1px dotted #888888; } 
+
+#footer a:visited { color: #666666; font-weight: bold; border-bottom: 1px dotted #666666; }
+
+#footer a:hover, #footer a:active { color: #999999; border-bottom: 1px solid #999999; }
+#sidebar-wrapper { width: 37%; }
+
+#sidebar { padding-left: 10px; }
+</style>
