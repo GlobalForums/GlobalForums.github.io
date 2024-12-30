@@ -250,3 +250,12 @@ body#babout li#labout a {
 #sidebar-wrapper { width: 37%; }
 
 #sidebar { padding-left: 10px; }
+
+html, body {
+  height: 100%;
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+}
