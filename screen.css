@@ -9,11 +9,11 @@ html
 
 /* Links */
 
-a:link { text-decoration: none; color: #7799bb; }
+a:link { text-decoration: none; color: #6e5494; }
 
-a:visited { text-decoration: none; color: #557799; }
+a:visited { text-decoration: none; color: #6e5494; }
 
-a:hover, a:active { color: #dd5555; }
+a:hover, a:active { color: #7799bb; }
 
 /* Html Elements */
 
